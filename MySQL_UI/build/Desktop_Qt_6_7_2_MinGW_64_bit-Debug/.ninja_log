@@ -1,0 +1,9 @@
+# ninja log v6
+9	676	7876876256943408	MySQL_UI_autogen/timestamp	badc80b029427a54
+9	676	7876876256943408	MySQL_UI_autogen/mocs_compilation.cpp	badc80b029427a54
+9	676	7876876256943408	C:/Users/ETUDIANT_2A/Documents/Git mini projet QT/TP1 (mini projet)/MySQL-UI/MySQL_UI/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/MySQL_UI_autogen/timestamp	badc80b029427a54
+9	676	7876876256943408	C:/Users/ETUDIANT_2A/Documents/Git mini projet QT/TP1 (mini projet)/MySQL-UI/MySQL_UI/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/MySQL_UI_autogen/mocs_compilation.cpp	badc80b029427a54
+688	2764	7876876257990295	CMakeFiles/MySQL_UI.dir/widget.cpp.obj	8147619f710d6d6c
+685	2798	7876876257990295	CMakeFiles/MySQL_UI.dir/main.cpp.obj	3611c5501a6f3d65
+682	2814	7876876257959092	CMakeFiles/MySQL_UI.dir/MySQL_UI_autogen/mocs_compilation.cpp.obj	4d312713f1faa002
+2814	3070	7876876279283360	MySQL_UI.exe	7489956efea8f4c4
