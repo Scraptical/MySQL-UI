@@ -6,6 +6,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include <QLineEdit>
 
 class Widget : public QWidget
 {
@@ -19,6 +20,8 @@ private:
     QPushButton *bLog;
     QPushButton *bQuitter;
     QLabel *Connection;
+    QLineEdit *ID;
+    QLineEdit *mdp;
 
 private slots :
     void Login();

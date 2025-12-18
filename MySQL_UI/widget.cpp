@@ -7,13 +7,23 @@ Widget::Widget(QWidget *parent)
     bLog = new QPushButton("Login",this);
     bQuitter = new QPushButton("Quitter",this);
     Connection = new QLabel(this);
+    ID = new QLineEdit("Entrez votre identifiant",this);
+    mdp = new QLineEdit("Entrez votre mot de passe",this);
 
     QHBoxLayout *BLayout = new QHBoxLayout;
+    QVBoxLayout *LineLayout = new QVBoxLayout;
+    QVBoxLayout *MainLayout = new QVBoxLayout;
 
     BLayout -> addWidget(bLog);
     BLayout -> addWidget(bQuitter);
     BLayout -> addWidget(Connection);
-    setLayout(BLayout);
+    LineLayout -> addWidget(ID);
+    LineLayout -> addWidget(mdp);
+
+    MainLayout -> addLayout(LineLayout);
+    MainLayout -> addLayout(BLayout);
+
+    setLayout(MainLayout);
 
     connect(bLog,SIGNAL(clicked()),this,SLOT(Login()));
     connect(bQuitter,SIGNAL(clicked()),this,SLOT(close()));
@@ -27,8 +37,8 @@ void Widget::Login()
         sql::Driver* driver;
         sql::Connection* conn;
         driver = sql::mariadb::get_driver_instance();
-        sql::SQLString url("jdbc:mariadb://172.20.30.253:3306/ma_bdd");
-        sql::Properties properties({{"user", "mon_login"}, {"t.gutierrez", "t.gutierrez"}});
+        sql::SQLString url("jdbc:mariadb://172.20.30.253:3306/t.gutierrez");
+        sql::Properties properties({{"user", "t.gutierrez"}, {"password", "t.gutierrez"}});
         conn = driver->connect(url, properties);
         if (conn)
         {
@@ -38,9 +48,7 @@ void Widget::Login()
     }
     catch (sql::SQLException &e)
     {
-        Connection -> setText("Erreur MariaDB");
-        Connection -> setText("Code erreur");
-        Connection -> setText("État SQL");
+        Connection -> setText(e.what());
     }
 }
 
