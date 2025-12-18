@@ -1,27 +1,25 @@
-#include "mainwindow.h"
-#include "./ui_mainwindow.h"
+#include "widget.h"
 #include <mariadb/conncpp.hpp>
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+Widget::Widget(QWidget *parent)
+    : QWidget(parent)
 {
-    ui->setupUi(this);
     bLog = new QPushButton("Login",this);
     bQuitter = new QPushButton("Quitter",this);
     Connection = new QLabel(this);
 
-    QHBoxLayout *hLayout = new QHBoxLayout;
+    QHBoxLayout *BLayout = new QHBoxLayout;
 
-    hLayout -> addWidget(bLog);
-    hLayout -> addWidget(bQuitter);
-    setLayout(hLayout);
+    BLayout -> addWidget(bLog);
+    BLayout -> addWidget(bQuitter);
+    BLayout -> addWidget(Connection);
+    setLayout(BLayout);
 
     connect(bLog,SIGNAL(clicked()),this,SLOT(Login()));
     connect(bQuitter,SIGNAL(clicked()),this,SLOT(close()));
 }
 
-void MainWindow::Login()
+void Widget::Login()
 {
     try
     {
@@ -46,7 +44,4 @@ void MainWindow::Login()
     }
 }
 
-MainWindow::~MainWindow()
-{
-    delete ui;
-}
+Widget::~Widget() {}

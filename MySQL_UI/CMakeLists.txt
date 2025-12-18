@@ -19,9 +19,9 @@ link_directories("C:/Program Files/MariaDB/MariaDB C++ Connector 64-bit")
 
 set(PROJECT_SOURCES
         main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
+        widget.cpp
+        widget.h
+        widget.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
