@@ -7,6 +7,7 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QLineEdit>
+#include <QString>
 
 class Widget : public QWidget
 {
@@ -20,6 +21,7 @@ private:
     QPushButton *bLog;
     QPushButton *bQuitter;
     QLabel *Connection;
+    QLabel *Result;
     QLineEdit *ID;
     QLineEdit *mdp;
 
