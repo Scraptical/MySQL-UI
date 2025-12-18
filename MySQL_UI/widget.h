@@ -8,6 +8,7 @@
 #include <QHBoxLayout>
 #include <QLineEdit>
 #include <QString>
+#include <QMessageBox>
 
 class Widget : public QWidget
 {

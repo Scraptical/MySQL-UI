@@ -54,7 +54,7 @@ void Widget::Login()
 
         if (conn)
         {
-            Connection -> setText("Connexion MariaDB réussie!");
+            //Connection -> setText("Connexion MariaDB réussie!");
         }
         std::cout<<"user:"<<User.toStdString()<<" mdp : "<<PassW.toStdString()<<std::endl;
         pstmt = conn->prepareStatement("SELECT COUNT(*) as res FROM Logins WHERE identifiant=? AND mdp=?");
@@ -65,11 +65,11 @@ void Widget::Login()
         if(res->first()){
        if (res -> getInt("res") == 1)
         {
-            Result -> setText("Connexion réussit");
+           QMessageBox::information(this,"Succès","Connexion Réussit");
         }
         else
         {
-            Result -> setText("Connexion échoué, veuillez rééssayer");
+            QMessageBox::warning(this,"Erreur","Votre identifiant et/ou mot de passe est incorrect");
         }
         }
         delete res;
